@@ -1,0 +1,42 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Local AWS API Gateway"
+  },
+  "schemes": ["http"],
+  "produces": ["application/json", "text/html"],
+  "paths": {
+    "/test" : {
+      "get": {
+        "description": "Some Lambda Function",
+        "operationId": "test-lambda/handler",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/hello/{name}" : {
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "description": "Some string parameter",
+          "required": true
+        }
+      ],
+      "get": {
+        "description": "Some another Lambda",
+        "operationId": "lambda2",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
